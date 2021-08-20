@@ -1,14 +1,32 @@
-Upload the data into HDFS from Vm
-create directory hdfs dfs -mkdir ./<path> <dir name>
-create seperate directories for every csv file 
-Create External tables in HIVE fro every file
+project-1
 
+Steps:
+
+Upload the data into HDFS from Vm
+first create directory hdfs dfs -mkdir <dir name>(project1)
+
+create seperate folders for every csv file in directory(project1)
+
+hdfs dfs -mkdir /user/maria_dev/project1/movies.csv
+hdfs dfs -mkdir /user/maria_dev/project1/ratings.csv
+hdfs dfs -mkdir /user/maria_dev/project1/tags.csv
+
+copy csv files to hdfs
+
+hdfs dfs -put movies.csv /user/maria_dev/project1/movies.csv
+hdfs dfs -put ratings.csv /user/maria_dev/project1/ratings.csv
+hdfs dfs -put tags.csv /user/maria_dev/project1/tags.csv
+-----------------------------------------------------------------------------------------------------------------------
+Create database movielens;
+use movielens
+
+Create External tables in HIVE fro every file
 
 CREATE EXTERNAL TABLE <file name> (id int, name string, salary float)
 row format delimited
 fields terminated by ','
-location '/hivedirectory'(specify the path of a directory for specific file) ;
- 
+location '/project1/file name'(specify the path of a directory for specific file) ;
+----------------------------------------------------------------------------------------------------------------------------
 Write HIVE queries to get the following results:
 
 
@@ -51,8 +69,6 @@ select count(distinct tag) from tags;
   userid IS NOT NULL AND                                                                                                                                            
   tag IS NOT NULL AND                                                                                                                                               
   tstamp IS NOT NULL;    
-
-
 
 
 09. filtering to get the list of drama movies
@@ -101,9 +117,6 @@ select * from ratings limit 5;
      where rating>4;
 
 
-
-
-
 17. display low rated movies (rating < 4)
 
 
@@ -113,15 +126,11 @@ select * from ratings limit 5;
      where rating>4;
 
 
-
-
 18. total number of unique movie genres
 
 select count(distinct title) from movies; 
 select genres,count(genres)from(select count(distinct(genres)) as g from movies) as a group by g;
   
-
-
 
 19. top 25 most rated movies
 
@@ -130,11 +139,9 @@ where m.movieid=r.movieid
 group by r.movieid,m.title 
 order by a desc limit 25;
 
-
 20. slicing out columns to display only title and genres columns from movies table
 
 select title, genres from movies limit 5;
-
 
 21. extract year from title of the movie
 
@@ -144,8 +151,6 @@ select substr(split(title, ' \\(')[1],1,4) from movies limit 5;
 22. count how many times each of genres occur
 
 select genres,count(genres)from(select distinct(genres) as g from movies) as a group by g; 
-
-
 
 23. Which movie received the highest number of ratings?
 
