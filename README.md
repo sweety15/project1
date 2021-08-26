@@ -25,5 +25,5 @@ Analyze the data using some aggregations like filtering and bucketing
 * Create directories in hdfs
 * Load the data
 * Create External tables using HiveQL
-## License
+
 
