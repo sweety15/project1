@@ -20,7 +20,10 @@ Analyze the data using some aggregations like filtering and bucketing
   row format delimited
   fields terminated by ','
   location '/project1/file name'(specify the path of a directory for specific file) ;
-*Now we can create queries and analyze the data
+* Now we can create queries and analyze the data
 ## Usage
-  
+* Create directories in hdfs
+* Load the data
+* Create External tables using HiveQL
+## License
 
