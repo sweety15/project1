@@ -1,6 +1,6 @@
 # PROJECT-1 HIVE
 ## Project Description
-BY using Hadoop I created directories in Hdfs and loaded the data in it later on i created external tables using HiveQL and
+BY using Hortonworks-sandbox in virtual Machine,i created directories in Hdfs and loaded the data in it,later on i created external tables using HiveQL and
 analyzed the data using some aggregations like filtering and bucketing
 ## Technologies Used
 * Hadoop
