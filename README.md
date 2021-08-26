@@ -1,8 +1,7 @@
 # PROJECT-1 HIVE
 ## Project Description
-Import csv data about movies ,ratings and their tags into HDFS, then create tables from the imported files in Hive. 
-Once imported, create queries using HiveQL to analyze and display data.
-Analyze the data using some aggregations like filtering and bucketing
+BY using Hadoop I created directories in Hdfs and loaded the data in it later on i created external tables using HiveQL and
+analyzed the data using some aggregations like filtering and bucketing
 ## Technologies Used
 * Hadoop
 * hive
