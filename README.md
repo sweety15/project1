@@ -16,6 +16,11 @@ Analyze the data using some aggregations like filtering and bucketing
 * Later load the 3 datafile in the 3 specific folders hdfs dfs -put movies.csv /user/maria_dev/project1/movies
 * create database database_name;
 * use database_name;
-* create External Table
-
+* CREATE EXTERNAL TABLE <file name> (id int, name string, salary float)
+  row format delimited
+  fields terminated by ','
+  location '/project1/file name'(specify the path of a directory for specific file) ;
+*Now we can create queries and analyze the data
+## Usage
+  
 
